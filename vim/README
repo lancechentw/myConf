@@ -1,4 +1,0 @@
-Location: ~/.vimrc
-
-Run :BundleInstall in a new environment to install all plugins
-

@@ -18,7 +18,7 @@ myTerminal      = "urxvtc"
  
 -- Width of the window border in pixels.
 --
-myBorderWidth   = 5
+myBorderWidth   = 3
  
 -- modMask lets you specify which modkey you want to use. The default
 -- is mod1Mask ("left alt").  You may also consider using mod3Mask
@@ -55,8 +55,8 @@ myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
  
 -- Border colors for unfocused and focused windows, respectively.
 --
-myNormalBorderColor  = "#dddddd"
-myFocusedBorderColor = "#ff0000"
+myNormalBorderColor  = "#000000"
+myFocusedBorderColor = "#88a470"
  
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -65,7 +65,20 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
  
     -- launch a terminal
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
- 
+
+    -- volume control
+    , ((0           , 0x1008FF13 ), spawn "amixer -q set Master 2dB+ unmute")
+
+    , ((0           , 0x1008FF11 ), spawn "amixer -q set Master 2dB- unmute")
+
+    , ((0           , 0x1008FF2F ), spawn "sudo pm-suspend")
+
+    , ((0           , 0x1008FFA7 ), spawn "sudo pm-hibernate")
+
+    , ((0           , 0x1008FF2D ), spawn "xscreensaver-command --lock")  
+
+    , ((0           , 0x1008ff93 ), spawn "xset dpms force off")  
+
     -- launch dmenu
     , ((modm,               xK_p     ), spawn "exe=`dmenu_path | dmenu` && eval \"exec $exe\"")
  
@@ -273,19 +286,19 @@ myLeftBar :: DzenConf
 myLeftBar = defaultDzen
     -- use the default as a base and override width and
     -- colors
-    { width   = Just $ Percent 40
+    { width   = Just $ Percent 30
     , fgColor = Just "#909090"
     , bgColor = Just "#303030"
-    -- , font = Just "-*-monaco-medium-r-normal-*-14-*-*-*-*-*-*-*"
-    , font = Just "WenQuanYi Micro Hei Mono-10"
+    -- , font = Just "-*-monaco-medium-r-normal-*-12-*-*-*-*-*-*-*"
+    , font = Just "WenQuanYi Micro Hei Mono-9"
     }
 
 myRightBar :: DzenConf
 myRightBar = myLeftBar
     -- use the left one as a base and override just the
     -- x position and width
-    { xPosition = Just $ Percent 40
-    , width     = Just $ Percent 60
+    { xPosition = Just $ Percent 30
+    , width     = Just $ Percent 70
     , alignment = Just RightAlign
     }
  

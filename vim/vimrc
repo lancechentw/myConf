@@ -18,6 +18,8 @@ Bundle 'mattn/gist-vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-surround'
+Bundle 'kien/ctrlp.vim'
+Bundle 'klen/python-mode'
 "Bundle 'tpope/vim-fugitive'
 "Bundle 'Lokaltog/vim-easymotion'
 "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}

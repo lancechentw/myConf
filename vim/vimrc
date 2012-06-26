@@ -57,6 +57,17 @@ set laststatus=2
 nmap <F2> :set number! number?<CR>
 nmap <F3> :NERDTreeToggle<CR>
 nmap <F4> :set paste! paste?<CR>
+noremap <F5> :call ToggleMouse()<CR>
+
+function! ToggleMouse()
+  if &mouse == 'a'
+    set mouse=
+    echo "Mouse usage disabled"
+  else
+    set mouse=a
+    echo "Mouse usage enabled"
+  endif
+endfunction
 
 " Cursor line
 autocmd InsertLeave * set cursorline

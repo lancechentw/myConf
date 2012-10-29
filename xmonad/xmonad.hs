@@ -66,6 +66,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch a terminal
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
+    , ((modm,               xK_d     ), spawn "xrandr --output VGA1 --off")
+
+    , ((modm .|. shiftMask, xK_d     ), spawn "xrandr --output VGA1 --auto --right-of LVDS1 --rotate left")
+
     -- volume control
     , ((0           , 0x1008FF13 ), spawn "amixer -q set Master 2dB+ unmute")
 

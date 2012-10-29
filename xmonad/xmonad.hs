@@ -71,9 +71,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     , ((0           , 0x1008FF11 ), spawn "amixer -q set Master 2dB- unmute")
 
-    , ((0           , 0x1008FF2F ), spawn "sudo pm-suspend")
+    , ((0           , 0x1008FF2F ), spawn "sudo /usr/sbin/pm-suspend")
 
-    , ((0           , 0x1008FFA7 ), spawn "sudo pm-hibernate")
+    , ((0           , 0x1008FFA7 ), spawn "sudo /usr/sbin/pm-hibernate")
 
     , ((0           , 0x1008FF2D ), spawn "xscreensaver-command --lock")  
 

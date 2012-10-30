@@ -89,7 +89,10 @@ set fileformat=unix
 autocmd     BufWinLeave ?* silent mkview
 autocmd     BufWinEnter ?* silent loadview
 
-set et ts=4 sw=4 sts=4
+set et sw=4 sts=4
+autocmd FileType python setlocal sts=2 sw=2
+autocmd FileType ruby setlocal sts=2 sw=2
+
 " easytab
 nmap    <tab> v>
 nmap    <s-tab> v<
@@ -123,3 +126,8 @@ nmap <LEADER>md :%!markdown --html4tags<CR>
 let php_sql_query=1
 let php_htmlInStrings=1
 
+" ruby
+nmap <LEADER>rb :!ruby %<CR>
+
+" python
+nmap <LEADER>py :!python %<CR>

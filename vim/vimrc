@@ -20,10 +20,8 @@ Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-surround'
 Bundle 'kien/ctrlp.vim'
 Bundle 'klen/python-mode'
-"Bundle 'tpope/vim-fugitive'
-"Bundle 'Lokaltog/vim-easymotion'
-"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-"Bundle 'tpope/vim-rails.git'
+Bundle 'vim-scripts/DrawIt'
+Bundle 'davidhalter/jedi-vim'
 " vim-scripts repos
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
@@ -90,8 +88,8 @@ autocmd     BufWinLeave ?* silent mkview
 autocmd     BufWinEnter ?* silent loadview
 
 set et sw=4 sts=4
-autocmd FileType python setlocal sts=2 sw=2
-autocmd FileType ruby setlocal sts=2 sw=2
+"autocmd FileType python setlocal sts=2 sw=2
+"autocmd FileType ruby setlocal sts=2 sw=2
 
 " easytab
 nmap    <tab> v>

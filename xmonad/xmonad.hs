@@ -68,18 +68,20 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     , ((modm,               xK_d     ), spawn "xrandr --output VGA1 --off")
 
-    , ((modm .|. shiftMask, xK_d     ), spawn "xrandr --output VGA1 --auto --right-of LVDS1 --rotate left")
+    , ((modm .|. shiftMask, xK_d     ), spawn "xrandr --output VGA1 --auto --below LVDS1")
 
     -- volume control
+    , ((0           , 0x1008FF12 ), spawn "amixer -q set Master toggle")
+
     , ((0           , 0x1008FF13 ), spawn "amixer -q set Master 2dB+ unmute")
 
     , ((0           , 0x1008FF11 ), spawn "amixer -q set Master 2dB- unmute")
 
-    , ((0           , 0x1008FF2F ), spawn "sudo /usr/sbin/pm-suspend")
+    , ((0           , 0x1008FF2F ), spawn "/usr/bin/systemctl suspend")
 
-    , ((0           , 0x1008FFA7 ), spawn "sudo /usr/sbin/pm-hibernate")
+    , ((0           , 0x1008FFA7 ), spawn "/usr/bin/systemctl hibernate")
 
-    , ((0           , 0x1008FF2D ), spawn "xscreensaver-command --lock")  
+    , ((0           , 0x1008FF2D ), spawn "slimlock")
 
     , ((0           , 0x1008ff93 ), spawn "xset dpms force off")  
 
@@ -269,7 +271,7 @@ myLogHook h = dynamicLogWithPP $ defaultPP
     , ppLayout          = dzenColor "#909090" "" . pad 
 
     -- if a window on a hidden workspace needs my attention, color it so
-    , ppUrgent          = dzenColor "#ff0000" "" . pad . dzenStrip
+    , ppUrgent          = dzenColor "#303030" "#3eec90" . pad . dzenStrip
 
     -- shorten if it goes over 100 characters
     , ppTitle           = shorten 100  

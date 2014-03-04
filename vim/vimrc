@@ -53,6 +53,9 @@ set number
 set wildmenu
 set wildmode=list:longest,full
 set laststatus=2
+set colorcolumn=80
+highlight ColorColumn ctermbg=237
+
 nmap <F2> :set number! number?<CR>
 nmap <F3> :NERDTreeToggle<CR>
 nmap <F4> :set paste! paste?<CR>

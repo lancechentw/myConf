@@ -111,7 +111,7 @@ nmap <C-L> :tabnext<CR>
 set foldenable
 set foldmethod=syntax
 set foldlevel=10000
-set foldcolumn=3
+set foldcolumn=1
 nnoremap <SPACE> za
 
 " Indent

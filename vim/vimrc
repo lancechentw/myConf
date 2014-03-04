@@ -23,6 +23,7 @@ Bundle 'klen/python-mode'
 Bundle 'vim-scripts/DrawIt'
 Bundle 'davidhalter/jedi-vim'
 " vim-scripts repos
+Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
 " non github repos

@@ -1,9 +1,14 @@
 [core]
-	editor = vim
+    editor = vim
 [color]
-	ui = auto
+    ui = auto
 [user]
-	name = Lance Chen
-	email = cyen0312@gmail.com
+    name = Lance Chen
+    email = cyen0312@gmail.com
+    signingkey = 6A0C53E2
 [alias]
-    graph = log --graph --date-order -C -M --pretty=format:\"%Cgreen%h%Creset %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
+    graph = log --graph --date-order -C -M --pretty=format:\"%Cgreen%h%Creset %Cblue%G?%Creset %ad [%an] %Cgreen%d%Creset %s\" --date=short
+[push]
+    default = simple
+[github]
+    user = Lance0312

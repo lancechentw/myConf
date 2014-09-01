@@ -60,6 +60,7 @@ nmap <F2> :set number! number?<CR>
 nmap <F3> :NERDTreeToggle<CR>
 nmap <F4> :set paste! paste?<CR>
 noremap <F5> :call ToggleMouse()<CR>
+nmap <F6> :setlocal spell! spelllang=en_us<CR>
 
 function! ToggleMouse()
   if &mouse == 'a'
@@ -133,3 +134,6 @@ nmap <LEADER>rb :!ruby %<CR>
 
 " python
 nmap <LEADER>py :!python %<CR>
+
+let g:ctrlp_user_command =
+    \ ['.git', 'cd %s && git ls-files . -co --exclude-standard']

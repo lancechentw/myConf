@@ -1,18 +1,29 @@
 !Xcursor.theme:   ComixCursors-White-Regular
 
 URxvt.termName:         xterm-256color
-URxvt.InputMethod:      ibus
-URxvt.preeditType:      OnTheSpot,None
+URxvt.inputMethod:      ibus
+URxvt.preeditType:      OverTheSpot
 URxvt.buffered:         true
-URxvt.saveLines:        10000
+URxvt.saveLines:        5000
 URxvt.urgentOnBell:     true
 !!URxvt.background:       black
 !URxvt.foreground:       white
 URxvt.cursorColor:      green
 URxvt.underlineColor:   yellow
-URxvt.font:             xft:MONACO:size=12:antialias=true, xft:WenQuanYi Zen Hei Mono:size=12:antialias=true,xft:LiHei_ProPC:pixelsize=12:antialias=true
-URxvt.boldFont:         xft:MONACO:bold:size=12:antialias=true, xft:WenQuanYi Zen Hei Mono:size=12:antialias=true,xft:LiHei_ProPC:bold:pixelsize=12:antialias=true
+URxvt.font:             xft:Monaco:size=14:antialias=true, xft:WenQuanYi Zen Hei Mono:size=14:antialias=true, xft:DejaVu Sans Mono:size=14:antialias=true
+!URxvt.font:             xft:Monaco:size=14:antialias=true, xft:Noto Sans T Chinese Demilight:size=20:antialias=true, xft:DejaVu Sans Mono:size=14:antialias=true
+URxvt.boldFont:         xft:Monaco:bold:size=14:antialias=true, xft:WenQuanYi Zen Hei Mono:bold:size=14:antialias=true, xft:DejaVu Sans Mono:bold:size=14:antialias=true
+!URxvt.boldFont:         xft:Monaco:bold:size=14:antialias=true, xft:Noto Sans T Chinese:bold:size=20:antialias=true, xft:DejaVu Sans Mono:bold:size=14:antialias=true
 !URxvt.title:            ArchWiki Example
+URxvt.perl-ext-common:  font-size
+
+!--------------------
+!Font size on the fly
+!--------------------
+URxvt.keysym.C-Up:     perl:font-size:increase
+URxvt.keysym.C-Down:   perl:font-size:decrease
+!URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+!URxvt.keysym.C-S-Down: perl:font-size:decglobal
 
 !------------
 !True Transparency
@@ -80,4 +91,9 @@ URxvt.color7  : #D3D3D7D7CFCF
 URxvt.color15 : #EEEEEEEEECEC
 
 URxvt*foreground:White
-!URxvt*background:Black
+!URxvt*foreground:Black
+!URxvt*background:White
+
+*newLoginCommand: echo 'Who are you?'
+
+

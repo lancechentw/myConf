@@ -14,7 +14,7 @@ import Dzen
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
-myTerminal      = "urxvtc"
+myTerminal      = "urxvt"
  
 -- Width of the window border in pixels.
 --
@@ -81,7 +81,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     , ((0           , 0x1008FFA7 ), spawn "/usr/bin/systemctl hibernate")
 
-    , ((0           , 0x1008FF2D ), spawn "slimlock")
+    , ((0           , 0x1008FF2D ), spawn "/usr/bin/slimlock")
+
+    , ((modm .|. shiftMask, xK_l ), spawn "slimlock")
 
     , ((0           , 0x1008ff93 ), spawn "xset dpms force off")  
 
@@ -292,7 +294,7 @@ myLeftBar :: DzenConf
 myLeftBar = defaultDzen
     -- use the default as a base and override width and
     -- colors
-    { width   = Just $ Percent 30
+    { width   = Just $ Percent 70
     , fgColor = Just "#909090"
     , bgColor = Just "#303030"
     -- , font = Just "-*-monaco-medium-r-normal-*-12-*-*-*-*-*-*-*"
@@ -303,8 +305,8 @@ myRightBar :: DzenConf
 myRightBar = myLeftBar
     -- use the left one as a base and override just the
     -- x position and width
-    { xPosition = Just $ Percent 30
-    , width     = Just $ Percent 70
+    { xPosition = Just $ Percent 70
+    , width     = Just $ Percent 30
     , alignment = Just RightAlign
     }
  

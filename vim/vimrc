@@ -1,12 +1,12 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
+Bundle 'gmarik/Vundle.vim'
 
 " My Bundles here:
 "
@@ -53,7 +53,7 @@ set number
 set wildmenu
 set wildmode=list:longest,full
 set laststatus=2
-set colorcolumn=80
+set colorcolumn=80,120
 highlight ColorColumn ctermbg=237
 
 nmap <F2> :set number! number?<CR>

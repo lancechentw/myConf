@@ -11,6 +11,8 @@ import XMonad.Hooks.UrgencyHook
 import System.IO ( Handle, hFlush, hPutStrLn, IOMode(AppendMode), hClose, openFile )
 import Dzen
 
+import Graphics.X11.ExtraTypes.XF86 as XF86
+
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
@@ -66,9 +68,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch a terminal
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
-    , ((modm,               xK_d     ), spawn "xrandr --output VGA1 --off")
+    , ((modm,               xK_d     ), spawn "xrandr --output DP1 --off")
 
-    , ((modm .|. shiftMask, xK_d     ), spawn "xrandr --output VGA1 --auto --below LVDS1")
+    , ((modm .|. shiftMask, xK_d     ), spawn "xrandr --output DP1 --auto --above eDP1")
 
     -- volume control
     , ((0           , 0x1008FF12 ), spawn "amixer -q set Master toggle")
@@ -85,7 +87,11 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     , ((modm .|. shiftMask, xK_l ), spawn "slimlock")
 
-    , ((0           , 0x1008ff93 ), spawn "xset dpms force off")  
+    , ((0           , 0x1008ff93 ), spawn "xset dpms force off")
+
+    , ((0           , XF86.xF86XK_MonBrightnessUp ), spawn "xbacklight +10")
+
+    , ((0           , XF86.xF86XK_MonBrightnessDown ), spawn "xbacklight -10")
 
     -- launch dmenu
     , ((modm,               xK_p     ), spawn "/usr/bin/dmenu_run")
@@ -298,7 +304,7 @@ myLeftBar = defaultDzen
     , fgColor = Just "#909090"
     , bgColor = Just "#303030"
     -- , font = Just "-*-monaco-medium-r-normal-*-12-*-*-*-*-*-*-*"
-    , font = Just "WenQuanYi Micro Hei Mono-9"
+    , font = Just "WenQuanYi Micro Hei Mono-12"
     }
 
 myRightBar :: DzenConf

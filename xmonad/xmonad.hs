@@ -245,6 +245,7 @@ myManageHook = composeAll
     , className =? "URxvt"           --> doFloat
     , className =? "Thunar"           --> doFloat
     , className =? "PPStream"           --> doFloat
+    , className =? "feh"            --> doFloat
     , resource  =? "sun-awt-X11-XFramePeer" --> doFloat
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore ]

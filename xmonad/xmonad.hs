@@ -8,6 +8,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Hooks.UrgencyHook
+import XMonad.Hooks.EwmhDesktops
 import System.IO ( Handle, hFlush, hPutStrLn, IOMode(AppendMode), hClose, openFile )
 import Dzen
 
@@ -336,7 +337,7 @@ myStartupHook = return ()
 main = do 
 d <- spawnDzen myLeftBar
 spawnToDzen "conky -c ~/.conkyrc" myRightBar
-xmonad $ withUrgencyHook NoUrgencyHook $ defaultConfig {
+xmonad $ withUrgencyHook NoUrgencyHook $ ewmh defaultConfig {
       -- simple stuff
         terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,

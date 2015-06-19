@@ -73,11 +73,11 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_d     ), spawn "xrandr --output DP1 --auto --above eDP1")
 
     -- volume control
-    , ((0           , 0x1008FF12 ), spawn "amixer -q set Master toggle")
+    , ((0           , 0x1008FF12 ), spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
 
-    , ((0           , 0x1008FF13 ), spawn "amixer -q set Master 2dB+ unmute")
+    , ((0           , 0x1008FF13 ), spawn "pactl -- set-sink-volume @DEFAULT_SINK@ +1%")
 
-    , ((0           , 0x1008FF11 ), spawn "amixer -q set Master 2dB- unmute")
+    , ((0           , 0x1008FF11 ), spawn "pactl -- set-sink-volume @DEFAULT_SINK@ -1%")
 
     , ((0           , 0x1008FF2F ), spawn "/usr/bin/systemctl suspend")
 

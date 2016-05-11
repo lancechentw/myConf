@@ -270,7 +270,7 @@ myFocusFollowsMouse = True
 --
 -- myLogHook = return ()
 -- myLogHook = dynamicLogWithPP dzenPP
-myLogHook h = dynamicLogWithPP $ defaultPP
+myLogHook h = dynamicLogWithPP $ def
     -- display current workspace as darkgrey on light grey (opposite of default colors)
     { ppCurrent         = dzenColor "#303030" "#909090" . pad 
 
@@ -339,7 +339,7 @@ myStartupHook = setWMName "LG3D"
 main = do 
 d <- spawnDzen myLeftBar
 spawnToDzen "conky -c ~/.conkyrc" myRightBar
-xmonad $ withUrgencyHook NoUrgencyHook $ ewmh defaultConfig {
+xmonad $ withUrgencyHook NoUrgencyHook $ ewmh def {
       -- simple stuff
         terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,

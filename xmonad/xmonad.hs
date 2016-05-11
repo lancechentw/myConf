@@ -86,7 +86,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     , ((0           , 0x1008FF2D ), spawn "/usr/bin/slimlock")
 
-    , ((modm .|. shiftMask, xK_l ), spawn "slimlock")
+    , ((modm .|. shiftMask, xK_l ), spawn "/usr/bin/slimlock")
 
     , ((0           , 0x1008ff93 ), spawn "xset dpms force off")
 

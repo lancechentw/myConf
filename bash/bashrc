@@ -132,3 +132,5 @@ PATH=$PATH:$HOME/.rvm/bin
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 
 eval $(keychain --agents ssh,gpg --eval --timeout 10 --quiet)
+
+export HISTSIZE="GOTCHA"

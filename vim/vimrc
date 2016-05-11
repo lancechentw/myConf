@@ -2,34 +2,38 @@ set nocompatible               " be iMproved
 filetype off                   " required!
 
 set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#rc()
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/Vundle.vim'
+Plugin 'gmarik/Vundle.vim'
 
 " My Bundles here:
 "
 " original repos on github
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'ap/vim-css-color'
-Bundle 'mattn/webapi-vim'
-Bundle 'mattn/gist-vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'msanders/snipmate.vim'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-fugitive'
-Bundle 'kien/ctrlp.vim'
-Bundle 'klen/python-mode'
-Bundle 'vim-scripts/DrawIt'
-Bundle 'davidhalter/jedi-vim'
-Bundle 'stephpy/vim-php-cs-fixer'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'ap/vim-css-color'
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'msanders/snipmate.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
+Plugin 'kien/ctrlp.vim'
+Plugin 'klen/python-mode'
+Plugin 'vim-scripts/DrawIt'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'stephpy/vim-php-cs-fixer'
 " vim-scripts repos
-Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
-"Bundle 'L9'
-"Bundle 'FuzzyFinder'
+Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
+"Plugin 'L9'
+"Plugin 'FuzzyFinder'
 " non github repos
-"Bundle 'git://git.wincent.com/command-t.git'
+"Plugin 'git://git.wincent.com/command-t.git'
+
+call vundle#end()
 
 filetype plugin indent on     " required!
 "

@@ -14,6 +14,8 @@ import Dzen
 
 import Graphics.X11.ExtraTypes.XF86 as XF86
 
+import XMonad.Hooks.SetWMName
+
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
@@ -327,7 +329,7 @@ myRightBar = myLeftBar
 -- per-workspace layout choices.
 --
 -- By default, do nothing.
-myStartupHook = return ()
+myStartupHook = setWMName "LG3D"
  
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.

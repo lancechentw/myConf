@@ -26,6 +26,7 @@ Plugin 'klen/python-mode'
 Plugin 'vim-scripts/DrawIt'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'stephpy/vim-php-cs-fixer'
+Plugin 'fatih/vim-go'
 " vim-scripts repos
 Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
 "Plugin 'L9'

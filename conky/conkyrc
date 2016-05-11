@@ -1,9 +1,12 @@
-background no
-out_to_console yes
-out_to_x no
-update_interval 1.0
-total_run_times 0
-use_spacer none
+conky.config={
+background=false,
+out_to_console=true,
+out_to_x=false,
+update_interval=1.0,
+total_run_times=0,
+use_spacer="none"
+}
 
-TEXT
-${battery_short} ${battery_time} | ${memperc}% ${mem} | ^fg(\#ff0000)${loadavg 1}^fg() | ${time %a %b %d %T}
+conky.text = [[
+${battery_short} ${battery_time} | ${memperc}% ${mem} | ${color #ff0000}${loadavg 1}$color | ${time %a %b %d %T}
+]]

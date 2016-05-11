@@ -15,7 +15,12 @@ URxvt.font:             xft:Monaco:size=14:antialias=true, xft:WenQuanYi Zen Hei
 URxvt.boldFont:         xft:Monaco:bold:size=14:antialias=true, xft:WenQuanYi Zen Hei Mono:bold:size=14:antialias=true, xft:DejaVu Sans Mono:bold:size=14:antialias=true
 !URxvt.boldFont:         xft:Monaco:bold:size=14:antialias=true, xft:Noto Sans T Chinese:bold:size=20:antialias=true, xft:DejaVu Sans Mono:bold:size=14:antialias=true
 !URxvt.title:            ArchWiki Example
-URxvt.perl-ext-common:  font-size
+URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select,font-size
+URxvt.url-select.launcher:  google-chrome-stable
+URxvt.url-select.underline: true
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.keysym.M-s:           perl:keyboard-select:search
 
 !--------------------
 !Font size on the fly

@@ -131,3 +131,4 @@ PATH=$PATH:$HOME/.rvm/bin
 # php composer
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 
+eval $(keychain --agents ssh,gpg --eval --timeout 10 --quiet)

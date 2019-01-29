@@ -339,7 +339,7 @@ myStartupHook = setWMName "LG3D"
 main = do 
 d <- spawnDzen myLeftBar
 spawnToDzen "conky -c ~/.conkyrc" myRightBar
-xmonad $ withUrgencyHook NoUrgencyHook $ ewmh def {
+xmonad $ withUrgencyHook NoUrgencyHook $ ewmh $ docks def {
       -- simple stuff
         terminal           = myTerminal,
         focusFollowsMouse  = myFocusFollowsMouse,

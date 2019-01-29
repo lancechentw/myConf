@@ -226,7 +226,7 @@ defaultDzen = nothingDzen
     , fgColor   = Just "#FFFFFF"
     , bgColor   = Just "#333333"
     , exec      = ["onstart=lower"]
-    , addargs   = ["-p"]
+    , addargs   = ["-p", "-dock"]
     }
 
 -- | Same thing but with an XFT font (Verdana)

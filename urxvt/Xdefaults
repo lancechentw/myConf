@@ -10,7 +10,7 @@ URxvt.urgentOnBell:     true
 !URxvt.foreground:       white
 URxvt.cursorColor:      green
 URxvt.underlineColor:   yellow
-URxvt.font:             xft:Monaco:size=14:antialias=true, xft:WenQuanYi Zen Hei Mono:size=14:antialias=true, xft:DejaVu Sans Mono:size=14:antialias=true
+URxvt.font:             xft:Monaco:size=14:antialias=true, xft:WenQuanYi Zen Hei Mono:size=14:antialias=true, xft:DejaVu Sans Mono:size=14:antialias=true, xft:Noto Color Emoji:size=14:antialias=true
 !URxvt.font:             xft:Monaco:size=14:antialias=true, xft:Noto Sans T Chinese Demilight:size=20:antialias=true, xft:DejaVu Sans Mono:size=14:antialias=true
 URxvt.boldFont:         xft:Monaco:bold:size=14:antialias=true, xft:WenQuanYi Zen Hei Mono:bold:size=14:antialias=true, xft:DejaVu Sans Mono:bold:size=14:antialias=true
 !URxvt.boldFont:         xft:Monaco:bold:size=14:antialias=true, xft:Noto Sans T Chinese:bold:size=20:antialias=true, xft:DejaVu Sans Mono:bold:size=14:antialias=true

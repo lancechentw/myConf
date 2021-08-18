@@ -16,6 +16,9 @@ import Graphics.X11.ExtraTypes.XF86 as XF86
 
 import XMonad.Hooks.SetWMName
 
+import XMonad.Layout.TrackFloating
+import XMonad.Hooks.RefocusLast (refocusLastLayoutHook, refocusLastWhen, isFloat)
+
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
@@ -212,8 +215,7 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
 -- which denotes layout choice.
 --
 -- myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full) ||| Full
-myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full)
-
+myLayout = refocusLastLayoutHook . trackFloating $ avoidStruts (tiled ||| Mirror tiled ||| Full)
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio

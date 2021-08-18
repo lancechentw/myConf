@@ -1,149 +1,232 @@
-set nocompatible               " be iMproved
-filetype off                   " required!
-
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle
-" required! 
-Plugin 'gmarik/Vundle.vim'
-
-" My Bundles here:
+set term=xterm-256color
+"set nocompatible               " be iMproved
+"filetype off                   " required!
 "
-" original repos on github
-Plugin 'Lokaltog/vim-powerline'
-Plugin 'ap/vim-css-color'
-Plugin 'mattn/webapi-vim'
-Plugin 'mattn/gist-vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'msanders/snipmate.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-fugitive'
-Plugin 'kien/ctrlp.vim'
-Plugin 'klen/python-mode'
-Plugin 'vim-scripts/DrawIt'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'stephpy/vim-php-cs-fixer'
-Plugin 'fatih/vim-go'
-" vim-scripts repos
-Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
-"Plugin 'L9'
-"Plugin 'FuzzyFinder'
-" non github repos
-"Plugin 'git://git.wincent.com/command-t.git'
-
-call vundle#end()
-
-filetype plugin indent on     " required!
+"set rtp+=~/.vim/bundle/Vundle.vim/
+"call vundle#begin()
+"" alternatively, pass a path where Vundle should install plugins
+""call vundle#begin('~/some/path/here')
 "
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"" let Vundle manage Vundle
+"" required!
+"Plugin 'gmarik/Vundle.vim'
 "
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
-
-
+"" My Bundles here:
+""
+"" original repos on github
+""Plugin 'Lokaltog/vim-powerline'
+""Plugin 'ap/vim-css-color'
+""Plugin 'mattn/webapi-vim'
+""Plugin 'mattn/gist-vim'
+""Plugin 'scrooloose/nerdtree'
+""Plugin 'msanders/snipmate.vim'
+""Plugin 'tpope/vim-surround'
+""Plugin 'tpope/vim-fugitive'
+""Plugin 'kien/ctrlp.vim'
+""Plugin 'klen/python-mode'
+""Plugin 'vim-scripts/DrawIt'
+""Plugin 'davidhalter/jedi-vim'
+""Plugin 'stephpy/vim-php-cs-fixer'
+""Plugin 'fatih/vim-go'
+""Plugin 'rust-lang/rust.vim'
+""Plugin 'kchmck/vim-coffee-script'
+""" vim-scripts repos
+""Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
+"""Plugin 'L9'
+"""Plugin 'FuzzyFinder'
+""" non github repos
+"""Plugin 'git://git.wincent.com/command-t.git'
+""Plugin 'scrooloose/syntastic'
+""Plugin 'dart-lang/dart-vim-plugin'
+""Plugin 'natebosch/vim-lsc'
+""Plugin 'natebosch/vim-lsc-dart'
+""Plugin 'gianarb/vim-flux'
+""Plugin 'lepture/vim-jinja'
+"
+"call vundle#end()
+"
+"filetype plugin indent on     " required!
+""
+"" Brief help
+"" :BundleList          - list configured bundles
+"" :BundleInstall(!)    - install(update) bundles
+"" :BundleSearch(!) foo - search(or refresh cache first) for foo
+"" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+""
+"" see :h vundle for more details or wiki for FAQ
+"" NOTE: comments after Bundle command are not allowed..
+"
+"
+call plug#begin('~/.vim/plugged')
+  Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'vim-syntastic/syntastic'
+  Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+  Plug 'prettier/vim-prettier', {
+    \ 'do': 'yarn install',
+    \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+""Plug 'iamcco/coc-tailwindcss', {'do': 'yarn install --frozen-lockfile && yarn run build'}
+  Plug 'elixir-editors/vim-elixir'
+  Plug 'mhinz/vim-mix-format'
+  Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
+  Plug 'rust-lang/rust.vim'
+  Plug 'lepture/vim-jinja'
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+  Plug 'tpope/vim-surround'
+  Plug 'cespare/vim-toml'
+  Plug 'vim-airline/vim-airline'
+call plug#end()
+"
+"
 set t_Co=256
 colorscheme desert
-
+"
 syntax on
-set modeline
-set showmatch
-set backspace=indent,eol,start 
-set ruler
+"set modeline
+"set showmatch
+"set backspace=indent,eol,start
+"set ruler
 set number
 set wildmenu
 set wildmode=list:longest,full
-set laststatus=2
-set colorcolumn=80,120
+"set laststatus=2
+set colorcolumn=80,120,280
 highlight ColorColumn ctermbg=237
-
-nmap <F2> :set number! number?<CR>
-nmap <F3> :NERDTreeToggle<CR>
-nmap <F4> :set paste! paste?<CR>
-noremap <F5> :call ToggleMouse()<CR>
-nmap <F6> :setlocal spell! spelllang=en_us<CR>
-
-function! ToggleMouse()
-  if &mouse == 'a'
-    set mouse=
-    echo "Mouse usage disabled"
-  else
-    set mouse=a
-    echo "Mouse usage enabled"
-  endif
-endfunction
-
-" Cursor line
-autocmd InsertLeave * set cursorline
-autocmd InsertEnter * set nocursorline
-
-" Search
+"
+"nmap <F2> :set number! number?<CR>
+"nmap <F3> :NERDTreeToggle<CR>
+"nmap <F4> :set paste! paste?<CR>
+"noremap <F5> :call ToggleMouse()<CR>
+"nmap <F6> :setlocal spell! spelllang=en_us<CR>
+"
+"function! ToggleMouse()
+"  if &mouse == 'a'
+"    set mouse=
+"    echo "Mouse usage disabled"
+"  else
+"    set mouse=a
+"    echo "Mouse usage enabled"
+"  endif
+"endfunction
+"
+"" Cursor line
+"autocmd InsertLeave * set cursorline
+"autocmd InsertEnter * set nocursorline
+"
+"" Search
 set ignorecase
 set smartcase
-set incsearch
-set hlsearch
-set wrapscan
-
-" encodings
-set fencs=ucs-bom,utf-8,big5,cp936,gb18030,euc-jp,euc-kr,latin1
-set enc=utf-8 fenc=utf-8 tenc=utf-8
-set fileformat=unix
-
-" save view
-autocmd     BufWinLeave ?* silent mkview
-autocmd     BufWinEnter ?* silent loadview
-
+"set incsearch
+"set hlsearch
+"set wrapscan
+"
+"" encodings
+"set fencs=ucs-bom,utf-8,big5,cp936,gb18030,euc-jp,euc-kr,latin1
+"set enc=utf-8 fenc=utf-8 tenc=utf-8
+"set fileformat=unix
+"
+"" save view
+"autocmd     BufWinLeave ?* silent mkview
+"autocmd     BufWinEnter ?* silent loadview
+"
 set et sw=4 sts=4
-"autocmd FileType python setlocal sts=2 sw=2
-"autocmd FileType ruby setlocal sts=2 sw=2
-
-" easytab
-nmap    <tab> v>
-nmap    <s-tab> v<
-xmap    <tab> >gv
-xmap    <s-tab> <gv
-
-let mapleader=','
-" Moving around and tabs
-nmap <LEADER>tc :tabnew<CR>
-nmap <LEADER>te :tabedit<SPACE>
-nmap <LEADER>tm :tabmove<SPACE>
-nmap <LEADER>tk :tabclose<CR>
+autocmd FileType javascript setlocal sts=2 sw=2
+""autocmd FileType python setlocal sts=2 sw=2
+""autocmd FileType ruby setlocal sts=2 sw=2
+"
+"" easytab
+"nmap    <tab> v>
+"nmap    <s-tab> v<
+"xmap    <tab> >gv
+"xmap    <s-tab> <gv
+"
+"let mapleader=','
+"" Moving around and tabs
+"nmap <LEADER>tc :tabnew<CR>
+"nmap <LEADER>te :tabedit<SPACE>
+"nmap <LEADER>tm :tabmove<SPACE>
+"nmap <LEADER>tk :tabclose<CR>
 nmap <C-H> :tabprev<CR>
 nmap <C-L> :tabnext<CR>
+"
+"" Folding
+"set foldenable
+"set foldmethod=syntax
+"set foldlevel=10000
+"set foldcolumn=1
+"nnoremap <SPACE> za
+"
+"" Indent
+"set autoindent
+"set smartindent
+"
+"" Markdown to HTML
+"nmap <LEADER>md :%!markdown --html4tags<CR>
+"
+"" php
+"let php_sql_query=1
+"let php_htmlInStrings=1
+"
+"" ruby
+"nmap <LEADER>rb :!ruby %<CR>
+"
+"" python
+"nmap <LEADER>py :!python %<CR>
+"
+"let g:ctrlp_user_command =
+"    \ ['.git', 'cd %s && git ls-files . -co --exclude-standard']
+"
+"let g:pymode_rope_lookup_project = 0
+"let g:pymode_rope = 0
+"
+"" when running at every change you may want to disable quickfix
+"" let g:prettier#quickfix_enabled = 0
+"" let g:prettier#autoformat = 0
+"" autocmd BufWritePre,TextChanged,InsertLeave *.js,*.json,*.css,*.scss,*.less,*.graphql Prettier
+"" autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql Prettier
+"
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_javascript_checkers = ['standard']
+"let g:syntastic_javascript_standard_generic = 1
+"let g:syntastic_javascript_checkers = ['eslint']
+"let g:syntastic_javascript_eslint_exec = 'eslint'
+"let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': ['dart'] }
+"
+"let g:lsc_auto_map = v:true
+"
+set undodir=$HOME/.vim/undos
+set undofile
+"
+"" fatih/vim-go
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+"au filetype go inoremap <buffer> . .<C-x><C-o>
 
-" Folding
-set foldenable
-set foldmethod=syntax
-set foldlevel=10000
-set foldcolumn=1
-nnoremap <SPACE> za
+"
+"au BufRead,BufNewFile *.flux		set filetype=flux
+"
+"augroup skeletons
+"    au!
+"    autocmd BufNewFile *.* silent! execute '0r ~/.vim/templates/skeleton.'.expand("<afile>:e")
+"augroup END
+"
+au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm,*.njk set ft=jinja
 
-" Indent
-set autoindent
-set smartindent
 
-" Markdown to HTML
-nmap <LEADER>md :%!markdown --html4tags<CR>
+"" neoclide/coc.nvim
+" XXX https://github.com/neoclide/coc.nvim/issues/1775
+let g:coc_disable_transparent_cursor = 1
 
-" php 
-let php_sql_query=1
-let php_htmlInStrings=1
+" use 'dd to delete without copying into buffer
+noremap ' "_
 
-" ruby
-nmap <LEADER>rb :!ruby %<CR>
+"" mhinz/vim-mix-format
+let g:mix_format_on_save = 1
 
-" python
-nmap <LEADER>py :!python %<CR>
-
-let g:ctrlp_user_command =
-    \ ['.git', 'cd %s && git ls-files . -co --exclude-standard']
-
-let g:pymode_rope_lookup_project = 0
-let g:pymode_rope = 0
+"" rust-lang/rust.vim
+let g:rustfmt_autosave = 1

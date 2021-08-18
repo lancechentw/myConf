@@ -4,8 +4,8 @@
     ui = auto
 [user]
     name = Lance Chen
-    email = cyen0312@gmail.com
-    signingkey = 6A0C53E2
+    email = hello@lancechen.tw
+    signingkey = "40DEC5BA6DD8CD7D!"
 [commit]
     gpgsign = true
 [alias]
@@ -13,6 +13,10 @@
 [push]
     default = simple
 [github]
-    user = Lance0312
+    user = lancechentw
 [gitreview]
-	username = Lance0312
+	username = lancechentw
+[gpg]
+	program = gpg2
+[pull]
+	ff = only

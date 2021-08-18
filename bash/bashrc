@@ -30,6 +30,7 @@ BWhite='\e[1;37m'       # White
 
 TTY=$(tty)
 TTY=${TTY##*/}
+GPG_TTY=$(tty)
 current_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1|/'
 }
@@ -101,8 +102,8 @@ alias rm='rm -i'
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
-export GTK_IM_MODULE_FILE=/etc/gtk-2.0/gtk.immodules
-#export GTK_IM_MODULE_FILE=/usr/lib/gtk-3.0/3.0.0/immodules.cache
+#export GTK_IM_MODULE_FILE=/etc/gtk-2.0/gtk.immodules
+export GTK_IM_MODULE_FILE=/usr/lib/gtk-3.0/3.0.0/immodules.cache
 
 complete -cf sudo
 complete -cf man
@@ -134,3 +135,7 @@ export PATH="$PATH:$HOME/.composer/vendor/bin"
 eval $(keychain --agents ssh,gpg --eval --timeout 10 --quiet)
 
 export HISTSIZE="GOTCHA"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export GOPATH=~/go

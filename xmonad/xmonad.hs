@@ -71,9 +71,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch a terminal
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
-    , ((modm,               xK_d     ), spawn "xrandr --output DP1 --off")
+    , ((modm,               xK_d     ), spawn "xrandr --output HDMI1 --off --output HDMI2 --off --output DP1 --off --output DP2 --off")
 
-    , ((modm .|. shiftMask, xK_d     ), spawn "xrandr --output DP1 --auto --above eDP1")
+    , ((modm .|. shiftMask, xK_d     ), spawn "/home/lance/bin/screen.sh")
 
     -- volume control
     , ((0           , 0x1008FF12 ), spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
@@ -318,7 +318,7 @@ myRightBar = myLeftBar
     -- x position and width
     { xPosition = Just $ Percent 70
     , width     = Just $ Percent 30
-    , alignment = Just RightAlign
+    , alignment = Just LeftAlign
     }
  
 ------------------------------------------------------------------------
